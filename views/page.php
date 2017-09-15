@@ -15,8 +15,8 @@
           <div class="col-lg-8 mx-auto">
            <?php
                 $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/page-data.php");
-                $template->set_tpl('{TITLE}', $data->article_title); 
-                $template->set_tpl('{TEXT}', $data->article_text);
+                $template->set_tpl('{TITLE}', $data[article_title]); 
+                $template->set_tpl('{TEXT}', $data[article_text]);
                 $template->tpl_parse();
                 echo $template->template;
             ?>    

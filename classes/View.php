@@ -10,7 +10,7 @@ class View
   {
     $this->name = $name;
     $this->nav = $nav;
-    $this->nav = $sidebar;
+    $this->sidebar = $sidebar;
     require_once 'views/' . $this->name . '.php';
   }
 

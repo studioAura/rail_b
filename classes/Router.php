@@ -1,47 +1,47 @@
 <?php
 
-class Router {
-  
-  protected $url;
+class Router
+ {
 
-  public function __construct() {
-    $this->url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_SPECIAL_CHARS); 
-    $this->url = rtrim($this->url, '/');
-    $this->url = explode('/', $this->url);
-    
-    if(empty($this->url[0])){
-      require 'controllers/Index.php';
+  public function __construct()
+  {
+    $url = explode('/', $_SERVER['REDIRECT_URL']);
+
+    if(empty($url[0]) AND empty($url[1]))
+    { 
+      require_once 'controllers/Index.php';
       $controller = new Index();
-    } else {
-        $file = 'controllers/' . $this->url[0].'.php';
+      $controller -> index();
+    } elseif (!empty($url[1]) AND empty($url[2]))
+    {
+      $class = $url[1];
+      $action = $url[1] . 'Action';
+      $file = 'controllers/' . $class . '.php';
         if(file_exists($file)) {
-            require $file;
-           } else {
-            require 'controllers/urlerror.php';
-            $controller = new UrlError();
-            return false;
-           }
-        $controller = new $this->url[0];
-    }    
-        
-    //Правило - если запрошена страница 'incidents' то подключаем контроллер Index 
-    if($this->url[0] === 'incidents') {
-      require 'controllers/Index.php';
-      $controller = new Index();
-    }
-
-    if(isset($this->url[1])) {
-      $param = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT); 
-      $action = $this->url[1] . 'Action';
-      require_once 'controllers/' . $this->url[0] . '.php';
-      $controller = new $this->url[0]();
+          require_once $file;
+          } else {
+          require 'controllers/UrlError.php';
+          $controller = new UrlError();
+          return false;
+        }
+      $controller = new $class();
+      $controller -> $action();
+    } elseif(!empty($url[1]) AND !empty($url[2]))
+    {
+      $param = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);     
+      $class = $url[1];
+      $action = $url[2] . 'Action';
+      $file = 'controllers/' . $class . '.php';
+        if(file_exists($file)) {
+          require_once $file;
+          } else {
+          require 'controllers/UrlError.php';
+          $controller = new UrlError();
+          return false;
+        }
+      $controller = new $class();
       $controller -> $action($param);
     }
-  
-    if(isset($this->url[2])) {
-      $controller->$this->url[1]($this->url[2]);
-    }
-    
-    
   }
-}
+
+ }

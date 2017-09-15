@@ -1,18 +1,10 @@
 <div class="col-lg-4 mx-auto">
-  <div class="sidebar-search">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="поиск...">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">Найти!</button>
-      </span>
-    </div>
-  </div>
-  <h4 class="sidebar-title">Категории</h4>
+  <h4 class="sidebar-title">Дороги</h4>
   <nav class="bg-light sidebar">
-    <ul class="nav nav-pills flex-column">
+    <ul class="nav nav-pills flex-column"> 
       <?php foreach ($sidebar as $item): ?>
-        <li class="nav-item">
-          <a class="nav-link" href=""><?= $item->doroga_name; ?></a>
+        <li class="nav-item">  
+          <a class="nav-link" href=""><?= $item[doroga_name]; ?></a>
         </li>
       <?php endforeach; ?>
     </ul>

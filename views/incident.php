@@ -15,20 +15,20 @@
           <div class="col-lg-8 mx-auto">
            <?php
                 $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/incident-data.php");
-                $template->set_tpl('{ID}', $data->id);
-                $template->set_tpl('{DOROGA}', $data->doroga); 
-                $template->set_tpl('{OTDELENIE}', $data->otdelen); 
-                $template->set_tpl('{SLUGBA}', $data->slugb);
-                $template->set_tpl('{START}', $data->startdate);
-                $template->set_tpl('{STOP}', $data->enddate);
-                $template->set_tpl('{LINPR}', $data->linpr);
-                $template->set_tpl('{BRAK}', $data->brak);
-                $template->set_tpl('{BRAKNAME}', $data->brakname);
-                $template->set_tpl('{STANNAME}', $data->stanname );
-                $template->set_tpl('{PEREGONNAME}', $data->peregonname);
-                $template->set_tpl('{SUMNZBIT}', $data->sumnzbit);
-                $template->set_tpl('{SUMVZBIT}', $data->sumvzbit);
-                $template->set_tpl('{NOTES}', $data->note);
+                $template->set_tpl('{ID}', $data[id]);
+                $template->set_tpl('{DOROGA}', $data[doroga]); 
+                $template->set_tpl('{OTDELENIE}', $data[otdelen]); 
+                $template->set_tpl('{SLUGBA}', $data[slugb]);
+                $template->set_tpl('{START}', $data[startdate]);
+                $template->set_tpl('{STOP}', $data[enddate]);
+                $template->set_tpl('{LINPR}', $data[linpr]);
+                $template->set_tpl('{BRAK}', $data[brak]);
+                $template->set_tpl('{BRAKNAME}', $data[brakname]);
+                $template->set_tpl('{STANNAME}', $data[stanname]);
+                $template->set_tpl('{PEREGONNAME}', $data[peregonname]);
+                $template->set_tpl('{SUMNZBIT}', $data[sumnzbit]);
+                $template->set_tpl('{SUMVZBIT}', $data[sumvzbit]);
+                $template->set_tpl('{NOTES}', $data[note]);
                 $template->tpl_parse();
                 echo $template->template;
             ?>    

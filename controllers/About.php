@@ -9,9 +9,10 @@ class About extends Controller{
   
     public function aboutAction() {
     $nav = Controller::nav();
+    $sidebar = Controller::sidebar();
     $article = 1;
-    $data = ORM::forTable('articles')->where('article_id', $article)->findOne();
-    $this->view->render("page", $data, $nav);
+    $data = DB::getRow('articles', 'article_id', $article);  
+    $this->view->render("page", $data, $nav, $sidebar);
 
   }
 

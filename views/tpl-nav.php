@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <?php foreach ($nav as $item): ?>
-          <li class="nav-item"><a class="nav-link" href="/<?= $item->menu_link; ?>"><?= $item->menu_title; ?></a></li>
+          <li class="nav-item"><a class="nav-link" href="/<?= $item[menu_link]; ?>"><?= $item[menu_title]; ?></a></li>
         <?php endforeach; ?>
       </ul>
     </div>

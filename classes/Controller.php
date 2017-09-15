@@ -11,13 +11,13 @@ class Controller
   
   public function nav()
   {
-    $this->nav = ORM::forTable('menu')->findMany();
+    $this->nav = DB::run("SELECT * FROM menu")->fetchAll(); 
     return $this->nav;
   }
   
   public function sidebar()
   {
-    $dorogi = ORM::forTable('dorogi')->findMany();
+    $dorogi = DB::run("SELECT * FROM dorogi")->fetchAll();
     return $dorogi;
   }
 

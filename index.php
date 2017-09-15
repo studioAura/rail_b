@@ -13,8 +13,8 @@ spl_autoload_register ( function ($class_name) {
   include ($file);
 });
 
-require_once 'libs/idiorm.php';
-require_once 'config/config.php';
+//require_once 'libs/idiorm.php';
+//require_once 'config/config.php';
 
 $router = new Router();  
 

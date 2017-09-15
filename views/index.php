@@ -17,19 +17,19 @@
             foreach ($data as $item)
               {
                 $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/index-data.php");
-                $template->set_tpl('{ID}', $item->id);
-                $template->set_tpl('{DOROGA}', $item->doroga); 
-                $template->set_tpl('{OTDELENIE}', $item->otdelen); 
-                $template->set_tpl('{SLUGBA}', $item->slugb);
-                $template->set_tpl('{START}', $item->startdate);
-                $template->set_tpl('{STOP}', $item->enddate);
-                $template->set_tpl('{LINPR}', $item->linpr);
-                $template->set_tpl('{BRAK}', $item->brak);
-                $template->set_tpl('{BRAKNAME}', $item->brakname);
-                $template->set_tpl('{STANNAME}', $item->stanname );
-                $template->set_tpl('{PEREGONNAME}', $item->peregonname);
-                $template->set_tpl('{SUMNZBIT}', $item->sumnzbit);
-                $template->set_tpl('{SUMVZBIT}', $item->sumvzbit);
+                $template->set_tpl('{ID}', $item[id]);
+                $template->set_tpl('{DOROGA}', $item[doroga]); 
+                $template->set_tpl('{OTDELENIE}', $item[otdelen]); 
+                $template->set_tpl('{SLUGBA}', $item[slugb]);
+                $template->set_tpl('{START}', $item[startdate]);
+                $template->set_tpl('{STOP}', $item[enddate]);
+                $template->set_tpl('{LINPR}', $item[linpr]);
+                $template->set_tpl('{BRAK}', $item[brak]);
+                $template->set_tpl('{BRAKNAME}', $item[brakname]);
+                $template->set_tpl('{STANNAME}', $item[stanname]);
+                $template->set_tpl('{PEREGONNAME}', $item[peregonname]);
+                $template->set_tpl('{SUMNZBIT}', $item[sumnzbit]);
+                $template->set_tpl('{SUMVZBIT}', $item[sumvzbit]);
                 $template->tpl_parse();
                 echo $template->template;
               } 
