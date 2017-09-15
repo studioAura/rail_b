@@ -1,0 +1,63 @@
+body {
+  color: #49525B;
+}
+p {
+  color: #49525B;
+  padding: 10px 0;
+}
+header {
+  padding: 80px 0 30px;
+}
+section {
+  padding: 70px 0;
+}
+.navbar-nav {
+  text-transform:uppercase;
+}
+.sidebar-searh {
+  flex: 1 1 auto;
+  padding: 0 0 1em 0;
+}
+.sidebar-title {
+  padding: 1.4em 0 1em 0;
+  text-transform:uppercase;
+}
+.post-title {
+  padding-top: 1em;
+}
+.post-full-title {
+  padding-top: 0;
+}
+.posts p {
+  padding: 5px 0;
+}
+.data-time {
+  font-weight: 300;
+}
+.lead {
+  color: #FFFFFF;
+}
+
+/* Pagination */
+
+.linkPage{
+font-weight: 400;
+color: gray;
+}
+.nav_button{
+background: #ebebeb;
+padding: 2px 5px;
+border: 1px solid #8c8c8c;
+}
+.point{
+margin-left: 10px;
+font-weight: 600;
+}
+
+/* END Pagination */
+
+@media (min-width: 992px) {
+  header {
+    padding: 80px 0 30px;
+  }
+}
