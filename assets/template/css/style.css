@@ -1,9 +1,11 @@
 body {
   color: #49525B;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 1.2em;
 }
 p {
   color: #49525B;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 header {
   padding: 80px 0 30px;
@@ -13,13 +15,24 @@ section {
 }
 .navbar-nav {
   text-transform:uppercase;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1.4em;
+}
+.nav-link {
+ /* font-weight: bold; */
+  color: #DBD7DB !important;
+}
+.navbar-brand img {
+  padding: 0px;
+  margin: 0px;
+  margin-top: -10px;
 }
 .sidebar-searh {
   flex: 1 1 auto;
   padding: 0 0 1em 0;
 }
 .sidebar-title {
-  padding: 1.4em 0 1em 0;
+  padding: 0em 0 0.5em 0;
   text-transform:uppercase;
 }
 .post-title {
@@ -38,23 +51,99 @@ section {
   color: #FFFFFF;
 }
 
+/* Incidents */
+
+.incident-adress {
+  font-size: 1.4em;
+}
+.incident-data {
+  font-size: 1.4em;
+}
+.readmore {
+  font-size: 1em;
+}
+
+/* END Incidents */
+
 /* Pagination */
 
-.linkPage{
-font-weight: 400;
-color: gray;
+.pagination {
+  margin:0 auto;
+  text-align:center;
+  padding:24px 0 24px 0;
 }
-.nav_button{
-background: #ebebeb;
-padding: 2px 5px;
-border: 1px solid #8c8c8c;
+.pagination li {
+  display:inline;
+  color:#fff;
+  text-shadow: 0 1px 1px #eee;
 }
-.point{
-margin-left: 10px;
-font-weight: 600;
+.pagination li span {
+  letter-spacing:0.1em;
+  margin:0 6px;
+}
+.pagination li a {
+  background:#007BFF;
+  color:#fff;
+  border:1px solid #007BFF;
+  padding:10px 12px;
+  text-decoration:none;
+  -moz-border-radius: 6px;
+  border-radius: 3px;
+  text-shadow: 0 1px 1px #eee;
+  margin:0 3px;
+}
+.pagination li a:hover {
+  background:white;
+  color: #303438;
+}
+.pagination li a:active {
+  background:white;
+  border:none;
+  color: #303438;
+  font-weight: bolder;
+}
+.pagination li.active a {
+  background:white;
+  border:none;
+  color: #303438;
+  font-weight: bolder;
+}
+.pagination li .titik{
+  color:#303438;
+  font-weight: bolder;
+}
+.pagination li.symbol a{
+  font-weight: bolder;
+  font-size: 16pt;
+  margin-top: 10px;
+  /*padding:5px 12px 8px 12px;*/
+}
+.pagination li.disabled{
+  display: none;
+  visibility: hidden;
 }
 
 /* END Pagination */
+
+/* Button TOP */
+
+#toTop {
+  width:100px;
+  border:1px solid #ccc;
+  background:#f7f7f7;
+  text-align:center;
+  padding:5px;
+  position:fixed;
+  bottom:10px; /* отступ кнопки от нижнего края страницы*/
+  right:10px;
+  cursor:pointer;
+  display:none;
+  color:#333;
+  font-family:verdana;
+  font-size:11px;
+}
+
+/* END Button TOP */
 
 @media (min-width: 992px) {
   header {

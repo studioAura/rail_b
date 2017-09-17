@@ -5,6 +5,7 @@ class Router
 
   public function __construct()
   {
+    
     $url = explode('/', $_SERVER['REDIRECT_URL']);
 
     if(empty($url[0]) AND empty($url[1]))
@@ -42,6 +43,6 @@ class Router
       $controller = new $class();
       $controller -> $action($param);
     }
-  }
-
+  } 
  }
+

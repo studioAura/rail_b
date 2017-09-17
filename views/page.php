@@ -35,6 +35,25 @@
 
     <!-- Plugin JavaScript -->
     <script src="assets/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="assets/template/js/jquery.ui.totop.js" type="text/javascript"></script>
+    <!-- Starting the plugin -->
+<!--    <script src="assets/template/js/plugin.js" type="text/javascript"></script>-->
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+      var defaults = {
+      containerID: 'toTop', // fading element id
+      containerHoverID: 'toTopHover', // fading element hover id
+      scrollSpeed: 1200,
+      easingType: 'linear'
+      };
+
+
+      $().UItoTop({ easingType: 'easeOutQuart' });
+
+      });
+    </script>
 
   </body>
 

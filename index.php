@@ -13,8 +13,19 @@ spl_autoload_register ( function ($class_name) {
   include ($file);
 });
 
-//require_once 'libs/idiorm.php';
-//require_once 'config/config.php';
+if (isset($_GET['auth'])){
 
-$router = new Router();  
+session_start();
+//$_SESSION['auth']=$_GET['auth'];
+setcookie('auth', $_GET['auth']);
+
+$router = new Router();
+} elseif (isset($_COOKIE['auth']) and $_COOKIE['auth'] = 'DDFTEJYKFGYR'){
+
+  $router = new Router();
+} else {
+  echo 'Ошибка аутентификации';
+}
+
+//$router = new Router();  
 

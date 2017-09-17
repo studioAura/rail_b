@@ -6,7 +6,7 @@ class View
   public $nav = [];
   public $sidebar = [];
   
-  public function render($name, $data, $nav = NULL, $sidebar = NULL)
+  public function render($name, $data, $nav = NULL, $sidebar = NULL, $pagination = NULL)
   {
     $this->name = $name;
     $this->nav = $nav;

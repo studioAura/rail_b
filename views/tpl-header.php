@@ -1,6 +1,6 @@
 <header class="bg-primary text-white">
   <div class="container text-center">
-    <h1>Инцинденты</h1>
-    <p class="lead">связанные с безопасностью движения</p>
+    <h1>Інціденти</h1>
+    <p class="lead">пов'язані з безпекою руху</p>
   </div>
 </header>

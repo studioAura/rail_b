@@ -12,9 +12,12 @@
     <section class="posts">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">  
+          <div class="col-lg-8 mx-auto"> 
+            <div class="panel panel-default">
+            <div class="panel-body">Текст</div>
+           </div>  
             <?php
-            foreach ($data as $item)
+            foreach ($data->data as $item)
               {
                 $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/index-data.php");
                 $template->set_tpl('{ID}', $item[id]);
@@ -32,7 +35,8 @@
                 $template->set_tpl('{SUMVZBIT}', $item[sumvzbit]);
                 $template->tpl_parse();
                 echo $template->template;
-              } 
+              }
+              echo $pagination;
             ?>
           </div>
           <?php include'tpl-sidebar.php'; ?>
@@ -48,6 +52,25 @@
 
     <!-- Plugin JavaScript -->
     <script src="assets/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="assets/template/js/jquery.ui.totop.js" type="text/javascript"></script>
+    <!-- Starting the plugin -->
+<!--    <script src="assets/template/js/plugin.js" type="text/javascript"></script>-->
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+      var defaults = {
+      containerID: 'toTop', // fading element id
+      containerHoverID: 'toTopHover', // fading element hover id
+      scrollSpeed: 1200,
+      easingType: 'linear'
+      };
+
+
+      $().UItoTop({ easingType: 'easeOutQuart' });
+
+      });
+    </script>
 
   </body>
 

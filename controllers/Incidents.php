@@ -9,11 +9,20 @@ class Incidents extends Controller{
   }
   
   public function incidentsAction() {
+    $limit = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
+    $page  = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
+    $links = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 4;
+    $query = "SELECT * FROM incidents ORDER BY startdate DESC";
+    $table = 'incidents';
+
     $nav = Controller::nav();
     $sidebar = Controller::sidebar();
-    $data = DB::getRowsSort('incidents', 'startdate', 'DESC');
-    $this->view->render("index", $data, $nav, $sidebar);
-
+    
+    $paginator  = new Paginator($query, $table);
+    $data       = $paginator->getData($limit, $page);
+    $pagination = $paginator->createLinks($links);
+    
+    $this->view->render("index", $data, $nav, $sidebar, $pagination);
   }
   
   public function incidentAction($incidentId) {
