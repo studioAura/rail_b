@@ -13,8 +13,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
+              
            <?php
-                $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/incident-data.php");
+           
+//                 foreach ($this->images as $item) {
+//        echo '<img class="img-responsiv" src="data:image/jpg;base64,'.base64_encode($item[image_data]).'">';
+//      }
+      
+                $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/incident-data.php", $this->images);
                 $template->set_tpl('{ID}', $data[id]);
                 $template->set_tpl('{DOROGA}', $data[doroga]); 
                 $template->set_tpl('{OTDELENIE}', $data[otdelen]); 
@@ -41,15 +47,16 @@
     <?php include'tpl-footer.php'; ?>
       
     <!-- Bootstrap core JavaScript -->
-    <script src="assets/template/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/template/vendor/popper/popper.min.js"></script>
-    <script src="assets/template/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/template/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/template/vendor/popper/popper.min.js"></script>
+    <script src="/assets/template/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/template/vendor/bootstrap/js/bootstrap-select.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="assets/template/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="assets/template/js/jquery.ui.totop.js" type="text/javascript"></script>
+    <script src="/assets/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/assets/template/colorbox/jquery.colorbox-min.js"></script>
+    <script src="/assets/template/js/jquery.ui.totop.js" type="text/javascript"></script>
     <!-- Starting the plugin -->
-<!--    <script src="assets/template/js/plugin.js" type="text/javascript"></script>-->
     
     <script type="text/javascript">
       $(document).ready(function() {

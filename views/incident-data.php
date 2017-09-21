@@ -12,6 +12,15 @@
 <!--    <hr>-->
   </div>
   <div class="panel-footer">
+      
+    <?php
+      foreach ($this->images as $item) {
+//        echo '<img class="img-thumbnail" src="data:image/jpg;base64,'.base64_encode($item[image_data]).'">';
+        echo '<a class="group3" href="data:image/jpg;base64,'.base64_encode($item[image_data]).'" title="">';
+          echo '<img class="img-thumbnail" src="data:image/jpg;base64,'.base64_encode($item[image_data]).'">';
+        echo '</a>';
+      } 
+    ?>
     <div class="full-text">{NOTES}</div>
   </div>
 </div>

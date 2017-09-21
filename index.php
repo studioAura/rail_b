@@ -13,10 +13,11 @@ spl_autoload_register ( function ($class_name) {
   include ($file);
 });
 
+
+
 if (isset($_GET['auth'])){
 
 session_start();
-//$_SESSION['auth']=$_GET['auth'];
 setcookie('auth', $_GET['auth']);
 
 $router = new Router();
@@ -24,7 +25,9 @@ $router = new Router();
 
   $router = new Router();
 } else {
-  echo 'Ошибка аутентификации';
+    require_once 'controllers/AthError.php';
+    $controller = new AthError();
+    $controller->error();
 }
 
 //$router = new Router();  

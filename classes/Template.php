@@ -4,8 +4,9 @@ class Template
   {
   public $vars   = array();
   public $template;
+  public $images;
 
-  public function __construct($tpl_name)
+  public function __construct($tpl_name, $images = NULL)
    {
    if(empty($tpl_name) || !file_exists($tpl_name))
     {
@@ -14,6 +15,7 @@ class Template
    else
     {
       ob_start();
+        $this->images = $images;
         include ($tpl_name);
         $this->template = ob_get_contents();
       ob_end_clean();

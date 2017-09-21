@@ -51,6 +51,29 @@ section {
   color: #FFFFFF;
 }
 
+/* Filter */
+
+.filter-dorogi {
+  padding: 10px;
+}
+.filter-dorogi .dropdown-menu {
+  background: #95a5a6;
+}
+
+.filter-dorogi-select {
+  height: 30px;
+}
+
+.filter-list {
+  background: #95a5a6;
+}
+.btn-filter-sub {
+  margin-top: 10px;
+  /*padding: 10px;  */
+}
+
+/* END Filter */
+
 /* Incidents */
 
 .incident-adress {
@@ -128,22 +151,39 @@ section {
 /* Button TOP */
 
 #toTop {
-  width:100px;
-  border:1px solid #ccc;
-  background:#f7f7f7;
-  text-align:center;
-  padding:5px;
-  position:fixed;
-  bottom:10px; /* отступ кнопки от нижнего края страницы*/
-  right:10px;
-  cursor:pointer;
   display:none;
-  color:#333;
-  font-family:verdana;
-  font-size:11px;
+  text-decoration:none;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  overflow:hidden;
+  width:51px;
+  height:51px;
+  border:none;
+  text-indent:100%;
+  background:url(../img/ui.totop.png) no-repeat left top;
+}
+#toTopHover {
+  background:url(../img/ui.totop.png) no-repeat left -51px;
+  width:51px;
+  height:51px;
+  display:block;
+  overflow:hidden;
+  float:left;
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:alpha(opacity=0);
+}
+#toTop:active, #toTop:focus {
+  outline:none;
 }
 
 /* END Button TOP */
+
+.img-thumbnail {
+  height: 200px;
+  margin: 10px;
+}
 
 @media (min-width: 992px) {
   header {

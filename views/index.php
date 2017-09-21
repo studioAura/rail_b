@@ -13,10 +13,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto"> 
-            <div class="panel panel-default">
-            <div class="panel-body">Текст</div>
-           </div>  
-            <?php
+            <?php include'tpl-filter.php'; ?>  
+            <?php 
             foreach ($data->data as $item)
               {
                 $template = new Template("$_SERVER[DOCUMENT_ROOT]/views/index-data.php");
@@ -46,13 +44,15 @@
     <?php include'tpl-footer.php'; ?>
       
     <!-- Bootstrap core JavaScript -->
-    <script src="assets/template/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/template/vendor/popper/popper.min.js"></script>
-    <script src="assets/template/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/template/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/template/vendor/popper/popper.min.js"></script>
+    <script src="/assets/template/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/template/vendor/bootstrap/js/bootstrap-select.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="assets/template/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="assets/template/js/jquery.ui.totop.js" type="text/javascript"></script>
+    <script src="/assets/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/assets/template/colorbox/jquery.colorbox-min.js"></script>
+    <script src="/assets/template/js/jquery.ui.totop.js" type="text/javascript"></script>
     <!-- Starting the plugin -->
 <!--    <script src="assets/template/js/plugin.js" type="text/javascript"></script>-->
     

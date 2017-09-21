@@ -8,11 +8,18 @@ class Paginator {
     private $query;
     private $all;
     private $table;
+    private $doroga;
 
     public function __construct($query, $table) {
 
         $this->query = $query;
         $this->table = $table;
+        
+        if(isset($_POST['doroga'])) {
+          $this->doroga = " WHERE doroga='" . $_POST['doroga'] . "'";
+        } else {
+          $this->doroga = '';
+        }
 
         $this->all = DB::getNum($this->table);
     }
@@ -25,7 +32,7 @@ class Paginator {
         if ( $this->limit == 'all' ) {
             $query = $this->query;
         } else {
-            $query = $this->query . " LIMIT " . ( ( $this->page - 1 ) * $this->limit ) . ", $this->limit";
+            $query = $this->query . $this->doroga . " ORDER BY startdate DESC LIMIT " . ( ( $this->page - 1 ) * $this->limit ) . ", $this->limit";
         }
         
         $rs = DB::run($query);

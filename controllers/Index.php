@@ -11,7 +11,7 @@ class Index extends Controller{
     $limit = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
     $page  = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
     $links = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 4;
-    $query = "SELECT * FROM incidents ORDER BY startdate DESC";
+    $query = "SELECT * FROM incidents";
     $table = 'incidents';
 
     $nav = Controller::nav();
@@ -30,7 +30,7 @@ class Index extends Controller{
     $limit = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 10;
     $page  = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
     $links = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 4;
-    $query = "SELECT * FROM incidents ORDER BY startdate DESC";
+    $query = "SELECT * FROM incidents";
     $table = 'incidents';
 
     $nav = Controller::nav();

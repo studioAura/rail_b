@@ -27,10 +27,23 @@ class Incidents extends Controller{
   
   public function incidentAction($incidentId) {
     $this->incidentId = $incidentId; 
+    
+    // Получаем меню
     $nav = Controller::nav();
+    
+    // Получаем сайдбар
     $sidebar = Controller::sidebar();
+    
+    // Пагинация не нужна
+    $pangination = "";
+    
+    // Получаем данные
     $data = DB::getRow('incidents', 'id', $this->incidentId);
-    $this->view->render("incident", $data, $nav, $sidebar);
+    
+    // Получаем изображения 
+    $images = DB::run("SELECT * FROM images WHERE incident_id=" . $this->incidentId . " ORDER BY image_npp ASC");
+    
+    $this->view->render("incident", $data, $nav, $sidebar, $pangination, $images);
 
   }
 
